@@ -33,6 +33,7 @@ export const routes: Routes = [
 {
   path: 'editar-chamado/:id',
   component: NovoChamadoComponent
-}
+},
+
 
 ];

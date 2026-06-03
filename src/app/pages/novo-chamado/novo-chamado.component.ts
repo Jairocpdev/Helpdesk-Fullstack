@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Chamado } from '../../models/chamado';
 import { ChamadoService} from '../../services/chamado.service';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,9 +16,12 @@ export class NovoChamadoComponent {
 
   form: FormGroup;
 
+  idChamado: number | null = null;
+
   constructor(private fb: FormBuilder,
     private chamadoService: ChamadoService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { 
 
     this.form = this.fb.group({
@@ -29,23 +32,56 @@ export class NovoChamadoComponent {
     });
   }
 
-  onSubmit() {
-  if (this.form.valid) {
+  ngOnInit() {
 
-    const novoChamado: Chamado = {
-      id: Date.now(),
-      titulo: this.form.value.titulo,
-      descricao: this.form.value.descricao,
-      prioridade: this.form.value.prioridade,
-      status: this.form.value.status
-    };
+  const id = this.route.snapshot.paramMap.get('id');
 
-    this.chamadoService.adicionar(novoChamado);
+  if (id) {
 
-    this.router.navigate(['/chamados']);
+    this.idChamado = Number(id);
+
+    const chamado = this.chamadoService.buscarPorId(
+      this.idChamado
+    );
+
+    if (chamado) {
+
+      this.form.patchValue({
+        titulo: chamado.titulo,
+        descricao: chamado.descricao,
+        prioridade: chamado.prioridade,
+        status: chamado.status
+      });
+
+    }
+  }
+}
+
+ onSubmit() {
+
+  if (!this.form.valid) {
+    console.log('Form inválido');
+    return;
+  }
+
+  const chamado: Chamado = {
+    id: this.idChamado ?? Date.now(),
+    titulo: this.form.value.titulo,
+    descricao: this.form.value.descricao,
+    prioridade: this.form.value.prioridade,
+    status: this.form.value.status
+  };
+
+  if (this.idChamado) {
+
+    this.chamadoService.atualizar(chamado);
 
   } else {
-    console.log('Form inválido');
+
+    this.chamadoService.adicionar(chamado);
+
   }
+
+  this.router.navigate(['/chamados']);
 }
 }
