@@ -3,10 +3,12 @@ import { Router } from '@angular/router';
 import { Chamado } from '../../models/chamado';
 import { ChamadoService } from '../../services/chamado.service';
 
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-chamados',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './chamados.component.html',
   styleUrl: './chamados.component.css'
 })
@@ -46,7 +48,14 @@ editarChamado(id: number) {
 }
 
 excluirChamado(id: number) {
-  this.chamadoService.excluir(id);
-  this.chamados = this.chamadoService.listar();
+
+  const confirmar = confirm(
+    'Deseja realmente excluir este chamado?'
+  );
+
+  if(confirmar) {
+    this.chamadoService.excluir(id);
+  }
+
 }
 }
