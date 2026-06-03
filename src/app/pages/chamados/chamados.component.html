@@ -1,0 +1,41 @@
+<h1>Chamados</h1>
+
+@for (chamado of chamados; track chamado.id) {
+
+  <div>
+    <h3>{{ chamado.titulo }}</h3>
+
+    <p>{{ chamado.descricao }}</p>
+
+    <p>Status: {{ chamado.status }}</p>
+
+    <p>Prioridade: {{ chamado.prioridade }}</p>
+
+    <hr>
+  </div>
+
+<br> <br>
+
+<button type="button" class="btn-editar" (click)="editarChamado(chamado.id)" class="btn-editar">
+  Editar
+</button>
+
+<br> <br>
+
+<button type="button" class="btn-excluir" (click)="excluirChamado(chamado.id)">
+  Excluir
+</button>
+
+}
+
+<br> <br>
+
+<button type="button" class="btn-voltar"(click)="voltarDashboard()">
+  Voltar ao Dashboard
+</button>
+
+<br> <br>
+
+<button type="button"  class="btn-novo" (click)="novoChamado()" routerLink="/novo-chamado">
+  Fazer Um Novo Chamado
+</button>
