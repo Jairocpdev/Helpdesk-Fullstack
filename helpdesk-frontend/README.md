@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # HelpdeskFrontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
@@ -58,50 +57,3 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# Help Desk Full Stack
-
-Sistema de gerenciamento de chamados de suporte técnico desenvolvido para fins de estudo e portfólio.
-
-## Tecnologias
-
-### Front-end
-
-* Angular 19
-* TypeScript
-* HTML5
-* CSS3
-
-### Back-end (planejado)
-
-* Java
-* Spring Boot
-* Spring Data JPA
-* PostgreSQL
-
-## Funcionalidades Implementadas
-
-* Tela de Login
-* Dashboard
-* Navegação entre páginas
-* Tela de Chamados
-* Estrutura inicial do projeto
-
-## Funcionalidades Planejadas
-
-* Cadastro de chamados
-* Edição de chamados
-* Exclusão de chamados
-* Integração Front-end e Back-end
-* Banco de dados PostgreSQL
-* Autenticação JWT
-* Controle de perfis de usuário
-
-## Objetivo
-
-Desenvolver uma aplicação Full Stack simulando um sistema de Help Desk utilizado em ambientes corporativos, aplicando conceitos de Front-end, Back-end, APIs REST e persistência de dados.
-
-## Autor
-
-Jairo Andrade
->>>>>>> 58fe4cdf56e14d3eeb71dcf2e2b941157fcc09f3
