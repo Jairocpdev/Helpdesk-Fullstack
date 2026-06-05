@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-chamados',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './chamados.component.html',
   styleUrl: './chamados.component.css'
 })

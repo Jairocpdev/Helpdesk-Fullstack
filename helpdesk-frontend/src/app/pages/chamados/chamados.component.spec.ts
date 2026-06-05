@@ -1,23 +1,61 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Chamado } from '../../models/chamado';
+import { ChamadoService } from '../../services/chamado.service';
 
-import { ChamadosComponent } from './chamados.component';
+import { CommonModule } from '@angular/common';
 
-describe('ChamadosComponent', () => {
-  let component: ChamadosComponent;
-  let fixture: ComponentFixture<ChamadosComponent>;
+@Component({
+  selector: 'app-chamados',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './chamados.component.html',
+  styleUrl: './chamados.component.css'
+})
+export class ChamadosComponent {
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ChamadosComponent]
-    })
-    .compileComponents();
+  chamados: Chamado[] = [];
 
-    fixture = TestBed.createComponent(ChamadosComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  constructor(
+    private router: Router,
+    private chamadoService: ChamadoService
+  ) {}
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  ngOnInit() {
+    this.chamados = this.chamadoService.listar();
+  }
+
+  voltarDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  novoChamado() {
+    this.router.navigate(['/novo-chamado']);
+  }
+
+  adicionar(chamado: Chamado): void {
+  this.chamados.push(chamado);
+}
+
+  listar(): Chamado[] {
+  return this.chamados;
+}
+
+editarChamado(id: number) {
+  this.router.navigate(
+    ['/editar-chamado', id]
+  );
+}
+
+excluirChamado(id: number) {
+
+  const confirmar = confirm(
+    'Deseja realmente excluir este chamado?'
+  );
+
+  if(confirmar) {
+    this.chamadoService.excluir(id);
+  }
+
+}
+}

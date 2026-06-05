@@ -18,4 +18,8 @@ export class DashboardComponent {
   verChamados () {
     this.router.navigate(['/chamados']);
   }
+
+  fazerNovoChamado () {
+    this.router.navigate(['/novo-chamado']);
+  }
 }

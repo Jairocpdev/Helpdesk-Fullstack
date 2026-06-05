@@ -1,7 +1,56 @@
 <h1>Chamados</h1>
 
-<p>Aqui será exibida a lista de chamados.</p>
+<button type="button" class="btn-novo" (click)="novoChamado()">
+  Novo Chamado
+</button>
 
-<button type="button" (click)="voltarDashboard()">
+<br><br>
+
+<div class="card" *ngFor="let chamado of chamados">
+
+  <h3>{{ chamado.titulo }}</h3>
+
+  <p>{{ chamado.descricao }}</p>
+
+  <p>
+    <strong>Status:</strong>
+
+    <span
+      [class.aberto]="chamado.status === 'aberto'"
+      [class.andamento]="chamado.status === 'em andamento'"
+      [class.concluido]="chamado.status === 'concluido'">
+
+      {{ chamado.status }}
+
+    </span>
+  </p>
+
+  <p>
+    <strong>Prioridade:</strong>
+    {{ chamado.prioridade }}
+  </p>
+
+  <button
+    type="button"
+    class="btn-editar"
+    (click)="editarChamado(chamado.id)">
+    Editar
+  </button>
+
+  <button
+    type="button"
+    class="btn-excluir"
+    (click)="excluirChamado(chamado.id)">
+    Excluir
+  </button>
+
+</div>
+
+<br><br>
+
+<button
+  type="button"
+  class="btn-voltar"
+  (click)="voltarDashboard()">
   Voltar ao Dashboard
 </button>

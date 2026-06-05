@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NovoChamadoComponent } from './novo-chamado.component';
+import { EmitirNovoChamadoComponent } from './emitir-novo-chamado.component';
 
-describe('NovoChamadoComponent', () => {
-  let component: NovoChamadoComponent;
-  let fixture: ComponentFixture<NovoChamadoComponent>;
+describe('EmitirNovoChamadoComponent', () => {
+  let component: EmitirNovoChamadoComponent;
+  let fixture: ComponentFixture<EmitirNovoChamadoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NovoChamadoComponent]
+      imports: [EmitirNovoChamadoComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NovoChamadoComponent);
+    fixture = TestBed.createComponent(EmitirNovoChamadoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

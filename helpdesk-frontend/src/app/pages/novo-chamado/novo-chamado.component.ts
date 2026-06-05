@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-novo-chamado',
-  standalone: true,
+  selector: 'app-emitir-novo-chamado',
   imports: [],
-  templateUrl: './novo-chamado.component.html',
-  styleUrl: './novo-chamado.component.css'
+  templateUrl: './emitir-novo-chamado.component.html',
+  styleUrl: './emitir-novo-chamado.component.css'
 })
-export class NovoChamadoComponent {
+export class EmitirNovoChamadoComponent {
+  
+  constructor(private router: Router) {}
 
+  novoChamado() {
+    this.router.navigate(['/novo-chamado']);
+  }
 }
