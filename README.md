@@ -1,107 +1,103 @@
-<<<<<<< HEAD
-# HelpdeskFrontend
+# 🛠️ Help Desk Full Stack
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+Sistema de Help Desk desenvolvido para estudos de desenvolvimento Full Stack, com foco em boas práticas de desenvolvimento, arquitetura em camadas e integração entre Front-End e Back-End.
 
-## Development server
+## 📋 Sobre o Projeto
 
-To start a local development server, run:
+O sistema permite o gerenciamento de chamados técnicos, simulando um ambiente de suporte corporativo.
 
-```bash
-ng serve
-```
+Os usuários podem:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* Criar chamados
+* Visualizar chamados
+* Editar chamados
+* Excluir chamados
+* Acompanhar status e prioridade dos atendimentos
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Tecnologias Utilizadas
 
-```bash
-ng generate component component-name
-```
+### Front-End
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# Help Desk Full Stack
-
-Sistema de gerenciamento de chamados de suporte técnico desenvolvido para fins de estudo e portfólio.
-
-## Tecnologias
-
-### Front-end
-
-* Angular 19
+* Angular
 * TypeScript
 * HTML5
 * CSS3
+* Angular Reactive Forms
+* Angular Router
 
-### Back-end (planejado)
+### Back-End (em desenvolvimento)
 
-* Java
-* Spring Boot
+* Java 21
+* Spring Boot 3
 * Spring Data JPA
 * PostgreSQL
+* Maven
 
-## Funcionalidades Implementadas
+---
 
-* Tela de Login
-* Dashboard
-* Navegação entre páginas
-* Tela de Chamados
-* Estrutura inicial do projeto
+## ✅ Funcionalidades Implementadas
 
-## Funcionalidades Planejadas
+### Dashboard
 
-* Cadastro de chamados
+* Navegação entre telas
+* Acesso à listagem de chamados
+
+### Chamados
+
+* Cadastro de novos chamados
+* Listagem de chamados
 * Edição de chamados
 * Exclusão de chamados
-* Integração Front-end e Back-end
-* Banco de dados PostgreSQL
-* Autenticação JWT
-* Controle de perfis de usuário
+* Controle de status
+* Controle de prioridade
 
-## Objetivo
+### Interface
 
-Desenvolver uma aplicação Full Stack simulando um sistema de Help Desk utilizado em ambientes corporativos, aplicando conceitos de Front-end, Back-end, APIs REST e persistência de dados.
+* Formulários reativos
+* Validação de campos
+* Confirmação de exclusão
+* Navegação entre componentes
 
-## Autor
+---
 
-Jairo Andrade
->>>>>>> 58fe4cdf56e14d3eeb71dcf2e2b941157fcc09f3
+## 📂 Estrutura do Projeto
+
+```text
+Helpdesk-Fullstack
+├── helpdesk-frontend
+└── helpdesk-backend
+```
+
+---
+
+## 🎯 Objetivos de Aprendizado
+
+Este projeto está sendo utilizado para praticar:
+
+* Angular
+* TypeScript
+* Consumo de APIs REST
+* Java
+* Spring Boot
+* PostgreSQL
+* Git e GitHub
+* Desenvolvimento Full Stack
+
+---
+
+## 🔄 Próximas Implementações
+
+* [x] CRUD completo de chamados (Front-End)
+* [ ] API REST com Spring Boot
+* [ ] Integração Angular + Back-End
+* [ ] Persistência em PostgreSQL
+* [ ] Login com autenticação
+* [ ] Deploy da aplicação
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Jairo César** como projeto de estudos e evolução profissional na área de Desenvolvimento de Software.
